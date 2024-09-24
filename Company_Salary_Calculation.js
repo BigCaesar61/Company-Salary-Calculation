@@ -55,7 +55,7 @@ departments: [
 
 
 };
-//console.log(company); // prints company object
+console.log(company); // prints company object
 
 
 //Task 2: Create a Recursive Function to Calculate Total Salary for a Department
@@ -80,4 +80,18 @@ function calculateDepartmentSalary(department) {
 console.log(calculateDepartmentSalary(company.departments[0])); //Sales Department
 console.log(calculateDepartmentSalary(company.departments[1])); //DevOps Department
 
+//Task 3: Create a Function to Calculate the Total Salary for All Departments
 
+function calculateCompanySalary(company) {
+    let totalCompanySalary = 0;
+
+    for(let department of company.departments) {
+
+        totalCompanySalary += calculateDepartmentSalary(department); //similar function but for the company
+    }
+    
+    return totalCompanySalary;
+
+}
+
+console.log(calculateCompanySalary(company)); //Total Salary for the company
